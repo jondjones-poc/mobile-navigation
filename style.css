@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
+
+:root {
+    --primary: #000;
+    --container: #eee;
+    --grey: #777;
+    --active : #000;
+    --background: #d7d8c0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC',sans-serif;
+    background-color: var(--background);
+    color: var(--primary);
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--container);
+    border-radius: 15px;
+    height: 600px;
+    width: 340px;
+}
+
+.phone .content {
+    opacity: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 60px);
+    width: 100%;
+    transition: opacity 0.4s ease-in;
+}
+
+.phone .content.show {
+    opacity: 1;
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: -5px;
+    width: 100%;
+}
+
+nav ul {
+    background-color: var(--container);
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 60px;
+}
+nav li {
+    color: var(--grey);
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+}
+nav ul li i{
+    font-size:0.75rem;
+}
+
+nav ul li p{
+    font-size:0.5rem;
+    margin: 2px 0;
+}
+
+nav ul li:hover, 
+nav ul li:active {
+    color: var(--active)
+}
